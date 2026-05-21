@@ -1,20 +1,11 @@
 import streamlit as st
 from pypdf import PdfReader
 import docx
-import spacy
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 from skills import SKILLS
-
-import os
-
-os.system("python -m spacy download en_core_web_sm")
-
-nlp = spacy.load("en_core_web_sm")
-
-
 # -------------------------
 # Extract Text from PDF
 # -------------------------
