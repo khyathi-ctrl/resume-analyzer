@@ -1,5 +1,5 @@
 import streamlit as st
-import PyPDF2
+from pypdf import PdfReader
 import docx
 import spacy
 
@@ -17,7 +17,7 @@ nlp = spacy.load("en_core_web_sm")
 def extract_pdf_text(pdf_file):
     text = ""
 
-    pdf_reader = PyPDF2.PdfReader(pdf_file)
+    pdf_reader = PdfReader(pdf_file)
 
     for page in pdf_reader.pages:
         text += page.extract_text()
